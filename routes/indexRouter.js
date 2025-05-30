@@ -1,7 +1,5 @@
 import { Router } from "express";
-import path from "path";
 
-const currentDir = import.meta.dirname;
 const indexRouter = Router();
 
 const messages = [
@@ -17,10 +15,9 @@ const messages = [
     }
 ];
 
-console.log(currentDir);
 
 indexRouter.get("/", (req, res) => {
-    res.render("index", { messages: messages });
+    res.render("index", { title: "Mini Messageboard" ,messages: messages });
 })
 
 export default indexRouter;
