@@ -12,7 +12,9 @@
     width: 1rem;
     height: 1rem;
 }
-
+body {
+    background-color: rgb(148, 182, 182);
+}
 * {
     /* border:1px dotted red; */
 }
@@ -36,3 +38,20 @@ footer {
     transform: translateX(-50%);
 }
 
+nav {
+    border: 5px solid white;
+    border-radius: 8px;
+    /* width: 100%; */
+    margin: 2rem 1rem;
+    background-color: #24a0ed;
+    color: white;
+    padding: 1rem 1rem;
+    font-family:sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navigation {
+    display: flex;
+    gap: 3rem;
+}
