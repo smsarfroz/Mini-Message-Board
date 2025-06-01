@@ -3,10 +3,10 @@
 
     <form action="/new" method="POST">
         <label for="name">Name:</label>
-        <input type="text" id="name" required>
+        <input type="text" id="name" name="messageUser"  required>
         <label for="message">Message:</label>
-        <input type="text" id="message" required>
-        <select>
+        <input type="text" id="message" name="messageText" required>
+        <select name="country">
             <option value="">Select your option</option>
             <option value="Afghanistan">Afghanistan</option>
             <option value="Albania">Albania</option>
@@ -248,7 +248,9 @@
             <option value="Zambia">Zambia</option>
             <option value="Zimbabwe">Zimbabwe</option>
         </select>
+
+        <input type="submit" value="Submit">
     </form>
 
-    <button>submit</button>
+    
 </div>
