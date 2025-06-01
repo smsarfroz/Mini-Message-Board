@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
     <title>Index</title>
 </head>
 <body>
-    
+    <%- include('navbar') %>
     <a href="/new">Type your message</a>
     <% messages.forEach(message => { %>
         <%- include('message', {message: message}) %> 
     <% }); %>
+
+    <%- include('footer') %>
 </body>
 </html>

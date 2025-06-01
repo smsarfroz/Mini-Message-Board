@@ -1,0 +1,38 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+.githubIcon {
+    width: 1rem;
+    height: 1rem;
+}
+
+* {
+    /* border:1px dotted red; */
+}
+a {
+    color:rgb(73, 73, 73);
+    text-decoration: none;
+}
+.footerText {
+    color: rgb(73, 73, 73);
+    display: flex;
+}
+.githubLink {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+footer {
+    position: fixed;
+    bottom: 0.7rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+

@@ -5,7 +5,9 @@ import path from "node:path";
 const app = express();
 const PORT = 8000;
 const currentDir = import.meta.dirname;
+const assetsPath = path.join(currentDir, "public");
 
+app.use(express.static(assetsPath));
 app.set("views", path.join(currentDir, "views"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
