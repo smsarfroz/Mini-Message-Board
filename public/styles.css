@@ -15,6 +15,9 @@
 body {
     /* background: #4776e6;
     background: linear-gradient(90deg, rgba(71, 118, 230, 1) 10%, rgba(72, 201, 176, 1) 52%, rgba(0, 255, 200, 1) 100%); */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 * {
     /* border:1px dotted red; */
@@ -37,10 +40,16 @@ a {
     text-align: center;
 }
 footer {
-    position: fixed;
-    bottom: 0.7rem;
-    left: 50%;
-    transform: translateX(-50%);
+    /* position: fixed; */
+    /* bottom: 0.7rem; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: auto;
 }
 
 nav {
@@ -74,9 +83,13 @@ nav {
     /* display: flex;
     flex-direction: column; */
     padding: 3.5rem 2rem;
-    position: fixed;
+    /* position: fixed;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); */
+
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 
     overflow: auto;
     border-radius: 10px;
@@ -110,3 +123,6 @@ select {
     font-weight: bolder;
     font-size: larger;
 }   
+.formClass {
+    height: 100vh;
+}
