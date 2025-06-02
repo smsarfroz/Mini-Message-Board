@@ -13,13 +13,18 @@
     height: 1rem;
 }
 body {
-    background-color: rgb(148, 182, 182);
+    /* background: #4776e6;
+    background: linear-gradient(90deg, rgba(71, 118, 230, 1) 10%, rgba(72, 201, 176, 1) 52%, rgba(0, 255, 200, 1) 100%); */
 }
 * {
-    /* border:1px dotted red; */
+    border:1px dotted red;
+}
+a.githubLink {
+    color:rgb(73, 73, 73);
+    text-decoration: none;
 }
 a {
-    color:rgb(73, 73, 73);
+    color: #e8f0fe;
     text-decoration: none;
 }
 .footerText {
@@ -43,15 +48,48 @@ nav {
     border-radius: 8px;
     /* width: 100%; */
     margin: 2rem 1rem;
-    background-color: #24a0ed;
     color: white;
     padding: 1rem 1rem;
     font-family:sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #1a73e8; 
+    border-color: #88acec; 
 }
 .navigation {
     display: flex;
     gap: 3rem;
+}
+
+.addMessage {
+    margin: 1rem 1rem;
+    background: #51c4ca; 
+    color: white;
+    border: none;
+    box-shadow: 0 2px 12px rgba(36, 160, 237, 0.3);
+
+    width: 60vw;
+    height: 50vw;
+    /* display: flex;
+    flex-direction: column; */
+    padding: 2rem 2rem;
+    /* position: fixed;
+    left: 50%;
+    transform: translateX(-50%); */
+
+    border-radius: 10px;
+}   
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+input {
+    width: 100%;
+}
+.message {
+    resize: vertical;
+    overflow: auto;
+    object-fit: contain;
 }

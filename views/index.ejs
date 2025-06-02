@@ -8,7 +8,6 @@
 </head>
 <body>
     <%- include('navbar') %>
-    <a href="/new">Type your message</a>
     <% messages.forEach(message => { %>
         <%- include('message', {message: message}) %> 
     <% }); %>
