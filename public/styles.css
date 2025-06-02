@@ -17,7 +17,7 @@ body {
     background: linear-gradient(90deg, rgba(71, 118, 230, 1) 10%, rgba(72, 201, 176, 1) 52%, rgba(0, 255, 200, 1) 100%); */
 }
 * {
-    border:1px dotted red;
+    /* border:1px dotted red; */
 }
 a.githubLink {
     color:rgb(73, 73, 73);
@@ -69,27 +69,37 @@ nav {
     border: none;
     box-shadow: 0 2px 12px rgba(36, 160, 237, 0.3);
 
-    width: 60vw;
-    height: 50vw;
+    width: 50vw;
+    height: auto;
     /* display: flex;
     flex-direction: column; */
-    padding: 2rem 2rem;
-    /* position: fixed;
+    padding: 3.5rem 2rem;
+    position: fixed;
     left: 50%;
-    transform: translateX(-50%); */
+    transform: translateX(-50%);
 
     border-radius: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }   
 .form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin-top: 25px;
 }
 input {
     width: 100%;
 }
-.message {
+#message {
     resize: vertical;
     overflow: auto;
-    object-fit: contain;
+    width: 100%;
 }
+.submit {
+    width: 60%;
+    position: relative;
+    left: 50%;
+    height: 4vw;
+    transform: translateX(-50%);
+    cursor: pointer;
+}   
