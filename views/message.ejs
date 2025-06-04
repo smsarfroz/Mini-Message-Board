@@ -1,6 +1,9 @@
 <div class="message">
-    <h1>User: <%= message.user %> </h1>
-    <p>message: <%= message.text %></p>
-    <p>Date: <%= message.added%></p>
-    <button><a href="/<%=message.id%>">open</a></button>
+    <p><%= message.added%></p>
+    <div class="messageText"><%- message.text %></div>
+    <hr class="dottedLine">
+    <div class="bottomContainer">
+        <p><%= message.user %> </p>
+        <p><i>from <%= message.country %></i></p>
+    </div>
 </div>

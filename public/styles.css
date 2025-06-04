@@ -50,6 +50,7 @@ footer {
     margin-right: auto;
 
     margin-top: auto;
+    margin-bottom: 0.6vw;
 }
 
 nav {
@@ -78,7 +79,7 @@ nav {
     border: none;
     box-shadow: 0 2px 12px rgba(36, 160, 237, 0.3);
 
-    width: 50vw;
+    width: 50%;
     height: auto;
     /* display: flex;
     flex-direction: column; */
@@ -125,4 +126,46 @@ select {
 }   
 .formClass {
     height: 100vh;
+}
+
+.messages {
+    margin: 2vw 7vw;
+    display: grid;
+    grid-template: repeat(1, 1fr) / repeat(3, 1fr);
+    gap: 2vw;
+}
+.message {
+    height: 320px;
+    width: 380px;
+    /* background-color: #51c4ca; */
+    padding: 1rem;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);  
+    transition: all 0.3s ease;
+}
+.message:hover {
+    transform: scale(1.005);  
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);  
+    z-index: 1;
+}
+.dottedLine {
+    border-style: none none dotted; 
+    background-color: #fff;
+    margin-bottom: 1rem;
+}
+.messageText {
+    font-weight: bolder;
+    font-size: 14px;
+    font-family: cursive;
+    margin: 1rem 0rem;
+    height: 55%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+.bottomContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 0.6rem;  
 }
