@@ -2,8 +2,9 @@ import express from "express";
 import indexRouter from "./routes/indexRouter.js";
 import path from "node:path";
 
+
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 const currentDir = import.meta.dirname;
 const assetsPath = path.join(currentDir, "public");
 

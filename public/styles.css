@@ -1,9 +1,7 @@
-/* 1. Use a more-intuitive box-sizing model */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* 2. Remove default margin */
 * {
   margin: 0;
 }
@@ -13,8 +11,6 @@
     height: 1rem;
 }
 body {
-    /* background: #4776e6;
-    background: linear-gradient(90deg, rgba(71, 118, 230, 1) 10%, rgba(72, 201, 176, 1) 52%, rgba(0, 255, 200, 1) 100%); */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -40,10 +36,6 @@ a {
     text-align: center;
 }
 footer {
-    /* position: fixed; */
-    /* bottom: 0.7rem; */
-    /* left: 50%; */
-    /* transform: translateX(-50%); */
 
     max-width: fit-content;
     margin-left: auto;
@@ -81,12 +73,7 @@ nav {
 
     width: 50%;
     height: auto;
-    /* display: flex;
-    flex-direction: column; */
     padding: 3.5rem 2rem;
-    /* position: fixed;
-    left: 50%;
-    transform: translateX(-50%); */
 
     max-width: fit-content;
     margin-left: auto;
@@ -137,7 +124,6 @@ select {
 .message {
     height: 320px;
     width: 380px;
-    /* background-color: #51c4ca; */
     padding: 1rem;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);  
     transition: all 0.3s ease;
@@ -168,4 +154,104 @@ select {
     flex-direction: column;
     align-items: center; 
     gap: 0.6rem;  
+}
+
+
+
+
+@media (max-width: 1200px) {
+    .messages {
+        grid-template: repeat(1, 1fr) / repeat(2, 1fr);
+    }
+    
+    .message {
+        width: 100%;
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .navigation {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .addMessage {
+        width: 80%;
+        padding: 2rem 1rem;
+    }
+    
+    .messages {
+        grid-template: repeat(1, 1fr) / repeat(1, 1fr);
+        margin: 2vw;
+    }
+    
+    input, select {
+        height: 4vw;
+    }
+    
+    .submit {
+        height: 6vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .addMessage {
+        width: 90%;
+        padding: 1.5rem 1rem;
+    }
+    
+    input, select {
+        height: 6vw;
+    }
+    
+    .submit {
+        height: 8vw;
+        font-size: medium;
+    }
+    
+    .message {
+        height: auto;
+        min-height: 280px;
+    }
+    
+    nav {
+        margin: 1rem 0.5rem;
+    }
+    
+    .githubIcon {
+        width: 0.8rem;
+        height: 0.8rem;
+    }
+    
+    .footerText {
+        font-size: 0.9rem;
+    }
+}
+
+@media (hover: none) {
+    .message:hover {
+        transform: none;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    }
+}
+
+input, select, textarea, button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 16px; 
+}
+
+@media (max-width: 768px) {
+    input, select, textarea, button {
+        font-size: 14px;
+    }
 }

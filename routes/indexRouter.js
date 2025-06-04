@@ -1,68 +1,27 @@
 import { Router } from "express";
+import supabase from "../config/supabaseClient.js";
 
 const indexRouter = Router();
 
 const messages = [
     {
-        id: 0,
-        text: "THIS IS SO COOL, ITS LIKE A TIME CAPSULE, IF SOMEONE FROM THE FUTURE IS READING THIS LET ME KNOW IF I MADE IT! HI MOM",
-        user: "Amando",
-        added: "01/06/2025",
-        country: "Albania"
-    },
-    {
         id: 1,
         text: "tmw odin-main is your emotional support rubber duck 🦆❤️</br>> Type detailed question with 5 screenshots and all relevant links</br>> Proofread it</br>> Spot the obvious mistake</br>> *existential crisis*</br>> Post 'Nevermind, I got it'</br>",
         user: "serialRubberDucker14",
         added: "03/06/2025",
         country: "India"
     },
-    {
-        id: 1,
-        text: "tmw odin-main is your emotional support rubber duck 🦆❤️</br>> Type detailed question with 5 screenshots and all relevant links</br>> Proofread it</br>> Spot the obvious mistake</br>> *existential crisis*</br>> Post 'Nevermind, I got it'</br>",
-        user: "serialRubberDucker14",
-        added: "03/06/2025",
-        country: "India"
-    },
-    {
-        id: 1,
-        text: "tmw odin-main is your emotional support rubber duck 🦆❤️</br>> Type detailed question with 5 screenshots and all relevant links</br>> Proofread it</br>> Spot the obvious mistake</br>> *existential crisis*</br>> Post 'Nevermind, I got it'</br>",
-        user: "serialRubberDucker14",
-        added: "03/06/2025",
-        country: "India"
-    },
-    {
-        id: 1,
-        text: "tmw odin-main is your emotional support rubber duck 🦆❤️</br>> Type detailed question with 5 screenshots and all relevant links</br>> Proofread it</br>> Spot the obvious mistake</br>> *existential crisis*</br>> Post 'Nevermind, I got it'</br>",
-        user: "serialRubberDucker14",
-        added: "03/06/2025",
-        country: "India"
-    },{
-        id: 1,
-        text: "tmw odin-main is your emotional support rubber duck 🦆❤️</br>> Type detailed question with 5 screenshots and all relevant links</br>> Proofread it</br>> Spot the obvious mistake</br>> *existential crisis*</br>> Post 'Nevermind, I got it'</br>",
-        user: "serialRubberDucker14",
-        added: "03/06/2025",
-        country: "India"
-    },
-    {
-        id: 1,
-        text: "tmw odin-main is your emotional support rubber duck 🦆❤️</br>> Type detailed question with 5 screenshots and all relevant links</br>> Proofread it</br>> Spot the obvious mistake</br>> *existential crisis*</br>> Post 'Nevermind, I got it'</br>",
-        user: "serialRubberDucker14",
-        added: "03/06/2025",
-        country: "India"
-    },
-    {
-        id: 1,
-        text: "tmw odin-main is your emotional support rubber duck 🦆❤️</br>> Type detailed question with 5 screenshots and all relevant links</br>> Proofread it</br>> Spot the obvious mistake</br>> *existential crisis*</br>> Post 'Nevermind, I got it'</br>",
-        user: "serialRubberDucker14",
-        added: "03/06/2025",
-        country: "India"
-    }
 ];
 
 
-indexRouter.get("/", (req, res) => {
-    res.render("index", { title: "Mini Messageboard", messages: messages });
+indexRouter.get("/", async (req, res) => {
+    const { data } = await supabase
+        .from("messages")
+        .select("*")
+        .order("created_at", { ascending: false });  
+
+    console.log(data);
+    res.render("index", { title: "Mini Messageboard", messages: data });
 })
 
 indexRouter.get("/new", (req, res) => {
