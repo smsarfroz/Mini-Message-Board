@@ -36,11 +36,16 @@ indexRouter.get("/", async (req, res) => {
 
 })
 
+
 indexRouter.get("/new", (req, res) => {
     res.render("form");
 });
 
-indexRouter.post("/new", (req, res) => {
+indexRouter.get("/:id", (req, res) => {
+    const { id } = req.params;
+    res.send(`Details for message ${id}`);
+});
+indexRouter.post("/new", async (req, res) => {
     const { messageText, messageUser, country } = req.body;
     const today = new Date();
     const yyyy = today.getFullYear();
@@ -52,7 +57,15 @@ indexRouter.post("/new", (req, res) => {
 
     const formattedToday = dd + '/' + mm + '/' + yyyy;
 
-    messages.push({ id: messages.length + 1, text: messageText, user: messageUser, added: formattedToday, country: country });
+    const { error } = await supabase
+        .from('messages')
+        .insert([{  text: messageText, user: messageUser, added: formattedToday, country: country }])
+    
+    if (error) {
+        console.error(error);
+        res.status(500).send("please fill the details correctly");
+    }
+    // messages.push({ id: messages.length + 1, text: messageText, user: messageUser, added: formattedToday, country: country });
     res.redirect("/");
 });
 
