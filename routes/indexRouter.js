@@ -15,13 +15,25 @@ const messages = [
 
 
 indexRouter.get("/", async (req, res) => {
-    const { data } = await supabase
+    // console.log(supabase);
+    const { data, error } = await supabase
         .from("messages")
         .select("*")
         .order("created_at", { ascending: false });  
 
-    console.log(data);
-    res.render("index", { title: "Mini Messageboard", messages: data });
+    if (error) {
+        return res.status(500).send("Database error");
+    }
+    // console.log(data);
+    const formattedMessages = data.map(msg => ({
+        id: msg.id,
+        text: msg.text,
+        user: msg.user,
+        added: new Date(msg.created_at).toLocaleDateString(),
+        country: msg.country
+    }));
+    res.render("index", { title: "Mini Messageboard", messages: formattedMessages });
+
 })
 
 indexRouter.get("/new", (req, res) => {
