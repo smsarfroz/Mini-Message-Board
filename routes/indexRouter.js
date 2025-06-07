@@ -3,15 +3,15 @@ import supabase from "../config/supabaseClient.js";
 
 const indexRouter = Router();
 
-const messages = [
-    {
-        id: 1,
-        text: "tmw odin-main is your emotional support rubber duck 🦆❤️</br>> Type detailed question with 5 screenshots and all relevant links</br>> Proofread it</br>> Spot the obvious mistake</br>> *existential crisis*</br>> Post 'Nevermind, I got it'</br>",
-        user: "serialRubberDucker14",
-        added: "03/06/2025",
-        country: "India"
-    },
-];
+// const messages = [
+//     {
+//         id: 1,
+//         text: "tmw odin-main is your emotional support rubber duck 🦆❤️</br>> Type detailed question with 5 screenshots and all relevant links</br>> Proofread it</br>> Spot the obvious mistake</br>> *existential crisis*</br>> Post 'Nevermind, I got it'</br>",
+//         user: "serialRubberDucker14",
+//         added: "03/06/2025",
+//         country: "India"
+//     },
+// ];
 
 
 indexRouter.get("/", async (req, res) => {

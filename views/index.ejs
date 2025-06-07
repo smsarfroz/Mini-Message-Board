@@ -1,38 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles.css">
     <title>Index</title>
 </head>
+
 <body>
     <%- include('navbar') %>
-    
-    <div class="messages">
-        <% messages.forEach(message => { %>
-            <%- include('message', {message: message}) %>
-        <% }); %>
-    </div>
 
-    <%- include('footer') %>
+        <div class="messages">
+            <% messages.forEach(message=> { %>
+                <%- include('message', {message: message}) %>
+                    <% }); %>
+        </div>
 
-    <script>
-        function getRandomColor() {
-            const letters = '0123456789ABCDEF';
-            let color = '#';
-            for (let i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
-        }
-        const cards = document.querySelectorAll(".message");
+        <%- include('footer') %>
 
-        cards.forEach(card => {
-            let randomColor = getRandomColor();
-            card.style.backgroundColor = randomColor;
-        });
-        
-    </script>
+            <script>
+                const cards = document.querySelectorAll(".message");
+
+                cards.forEach(card => {
+                    let randomColor = getRandomColor();
+                    card.style.backgroundColor = randomColor;
+                });
+                function getRandomColor() {
+                    const letters = '0123456789ABCDEF';
+                    let color = '#';
+                    let luminance = 0;
+                    let isTooDark = true;
+
+                    while (isTooDark) {
+                        color = '#';
+                        for (let i = 0; i < 6; i++) {
+                            color += letters[Math.floor(Math.random() * 16)];
+                        }
+
+                        const hex = color.substring(1);
+                        const r = parseInt(hex.substr(0, 2), 16) / 255;
+                        const g = parseInt(hex.substr(2, 2), 16) / 255;
+                        const b = parseInt(hex.substr(4, 2), 16) / 255;
+
+                        luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b; 
+
+                        isTooDark = luminance < 0.3; 
+                    }
+
+                    return color;
+                }
+
+            </script>
 </body>
+
 </html>
