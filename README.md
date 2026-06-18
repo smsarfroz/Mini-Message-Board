@@ -1,3 +1,5 @@
+<img width="1461" height="693" alt="image" src="https://github.com/user-attachments/assets/b7b6c23b-6398-4396-b43b-8f2884ea52cd" />
+
 # Mini Message Board
 
 A simple and fun message board where anyone can share their thoughts! Leave a message, see what others have said.
@@ -44,3 +46,5 @@ When you submit a new message through the form, it gets added to the array and y
 ---
 
 Made with ❤️ as part of The Odin Project curriculum
+=======
+
